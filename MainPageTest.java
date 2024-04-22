@@ -17,7 +17,8 @@ public class MainPageTest {
         driver.get("https://www.espn.com");
     }
     @Test
-    public void verfiyNavi(){
+    public void verfiyNavi() throws InterruptedException {
+        Thread.sleep(1000);
         String expectedURL = "https://www.espn.com/";
         String currentURL = driver.getCurrentUrl();
 
@@ -29,20 +30,16 @@ public class MainPageTest {
 
     }
     @Test
-    public void getDropdownCata(){
+    public void getDropdownCata() throws InterruptedException {
+        Thread.sleep(1000);
         WebElement dropdownButton = driver.findElement(By.cssSelector("button.button-filter"));
-
-        // Click on the dropdown button
         dropdownButton.click();
-
-        // Wait for the dropdown menu to appear
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement dropdownMenu = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("dropdown-menu")));
 
         // Retrieve all options from the dropdown
         List<WebElement> options = dropdownMenu.findElements(By.tagName("a"));
 
-        // Print each option
         for (WebElement option : options) {
             System.out.println(option.getText());
         }
@@ -51,28 +48,24 @@ public class MainPageTest {
     public void getHeadline(){
         WebElement titleWrapper = driver.findElement(By.xpath("//h2[contains(@class, 'contentItem__title')]"));
 
-        // Find the title element within the wrapper
         WebElement titleElement = titleWrapper.findElement(By.className("contentItem__title"));
 
-        // Get the text from the title element
         String titleText = titleElement.getText();
 
-        // Find the subhead element within the wrapper
         WebElement subheadElement = titleWrapper.findElement(By.className("contentItem__subhead"));
 
-        // Get the text from the subhead element
         String subheadText = subheadElement.getText();
 
-        // Print the text
         System.out.println("Title: " + titleText);
         System.out.println("Subhead: " + subheadText);
     }
 
     @Test
-    public void ClickHeadline(){
+    public void ClickHeadline() throws InterruptedException {
+        Thread.sleep(1000);
         WebElement titleElement = driver.findElement(By.xpath("//h2[contains(@class, 'contentItem__title')]"));
 
-        // Click on the element
+
         titleElement.click();
     }
 

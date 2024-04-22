@@ -38,10 +38,9 @@ public class WatchEspn {
     public  void getVideoTitle(){
         WebElement titleElement = driver.findElement(By.cssSelector("#fittPageContainer > section > div:nth-child(1) > section > div.Carousel__Wrapper.relative.Carousel__Wrapper--canScrollRight > div > div > ul > li.CarouselSlide.relative.pointer.CarouselSlide--active.CarouselSlide--inView > div > div > a > div.WatchTile__Content > div > div:nth-child(1) > h2"));
 
-        // Get the text content of the element
+        // Gets the text content of the element
         String title = titleElement.getText().trim();
 
-        // Print the title
         System.out.println("Title: " + title);
 
     }
@@ -58,7 +57,6 @@ public class WatchEspn {
     public void clickOnThreeDots(){
         WebElement svgElement = driver.findElement(By.cssSelector("#fittPageContainer > section > div:nth-child(1) > section > div.Carousel__Wrapper.relative.Carousel__Wrapper--canScrollRight > div > div > ul > li.CarouselSlide.relative.pointer.CarouselSlide--active.CarouselSlide--inView > div > div > a > div.WatchTile__Content > div > div.WatchTile_ContinueWatching > button > svg > use"));
 
-        // Click on the element
         svgElement.click();
 
     }
@@ -66,7 +64,6 @@ public class WatchEspn {
     public void goToBrowse(){
         WebElement navLinkElement = driver.findElement(By.cssSelector("#nav-link-nav-menu-item-9419 > span"));
 
-        // Click on the element
         navLinkElement.click();
     }
 

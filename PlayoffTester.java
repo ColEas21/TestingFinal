@@ -37,21 +37,24 @@ public class PlayoffTester {
     public void GetNBAChallenge(){
         WebElement nbaPlayoffChallengeElement = driver.findElement(By.xpath("//a[@tabindex='0' and @itemprop='url' and @href='https://fantasy.espn.com/games/nba-playoff-challenge-2024/?addata=nbaplayoffchallenge2024_nba_web_fantasynav']"));
 
-        // Click on the element
+
         nbaPlayoffChallengeElement.click();
     }
     @Test(dependsOnMethods = "GetNBAChallenge")
     public void clickBracket(){
-        String jsPath = "#fittPageContainer > div > div.CHUIPageContent_Children > div:nth-child(2) > div > div > div > section.Card.ChuiCard.ChuiCard--shadowMobile.BracketChallengeHome-section.css-qjh506 > section:nth-child(2) > a > div > div.BracketCardHeader-headerDataContainer > div.BracketCardHeader-titleContainer > div.css-150kxx3 > span > span";
-        ((JavascriptExecutor) driver).executeScript("document.querySelector('" + jsPath + "').click();");
+        //String jsPath = "#fittPageContainer > div > div.CHUIPageContent_Children > div:nth-child(2) > div > div > div > section.Card.ChuiCard.ChuiCard--shadowMobile.BracketChallengeHome-section.css-qjh506 > section:nth-child(2) > a > div > div.BracketCardHeader-headerDataContainer > div.BracketCardHeader-titleContainer > div.css-150kxx3 > span > span";
+        //((JavascriptExecutor) driver).executeScript("document.querySelector('" + jsPath + "').click();");
+        WebElement element = driver.findElement(By.cssSelector("a[href='/games/nba-playoff-challenge-2024/bracket?id=238ff790-f84a-11ee-bf2f-bf5b7d72ba37']"));
+
+        element.click();
 
     }
 
     @Test(dependsOnMethods = "clickBracket")
     public void clickGroups() throws InterruptedException {
         Thread.sleep(1000);
-        String jsPath = "#fittPageContainer > div > div.ChallengeNav.css-1kuag8l > div > div > div > div > nav > ul > li:nth-child(3) > a";
-        ((JavascriptExecutor) driver).executeScript("document.querySelector('" + jsPath + "').click();");
+        //String jsPath = "#fittPageContainer > div > div.ChallengeNav.css-1kuag8l > div > div > div > div > nav > ul > li:nth-child(3) > a";
+        //((JavascriptExecutor) driver).executeScript("document.querySelector('" + jsPath + "').click();");
 
     }
 

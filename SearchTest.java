@@ -23,18 +23,19 @@ public class SearchTest {
     }
 
     @Test
-    public void clickOnSearch(){
+    public void clickOnSearch() throws InterruptedException {
+        Thread.sleep(1000);
 
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         WebElement searchTrigger = wait.until(ExpectedConditions.elementToBeClickable(By.id("global-search-trigger")));
 
-        // Click on the element
         searchTrigger.click();
     }
 
     @Test(dependsOnMethods = "clickOnSearch")
-    public void SearchSport(){
+    public void SearchSport() throws InterruptedException {
+        Thread.sleep(1000);
         WebElement searchInputElement = driver.findElement(By.cssSelector("#global-search-input"));
 
         // Enter "football" into the input field
@@ -50,7 +51,6 @@ public class SearchTest {
 
         WebElement element = driver.findElement(By.cssSelector("#fittPageContainer > div:nth-child(2) > div > div > ul > li:nth-child(2) > a"));
 
-        // Click on the element
         element.click();
     }
 
@@ -59,10 +59,10 @@ public class SearchTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement searchInputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"fittPageContainer\"]/div[2]/div/div/div[1]/form/input")));
 
-        // Clear the current search input
-        searchInputElement.clear();
 
-        // Enter "Tom Brady" into the input field
+        searchInputElement.clear();
+        Thread.sleep(1000);
+
         searchInputElement.sendKeys("Tom Brady");
 
         // Press Enter key to submit the search
@@ -71,12 +71,13 @@ public class SearchTest {
     }
 
     @Test(dependsOnMethods = "searchPlayer")
-    public void SearchNonSense(){
+    public void SearchNonSense() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement IncorrectsearchInputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"fittPageContainer\"]/div[2]/div/div/div[1]/form/input")));
         IncorrectsearchInputElement.clear();
         IncorrectsearchInputElement.sendKeys("432423");
         IncorrectsearchInputElement.sendKeys(Keys.ENTER);
+        Thread.sleep(1000);
 
     }
 }

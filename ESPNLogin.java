@@ -22,7 +22,6 @@ public class ESPNLogin {
     public static void setUp() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\colli\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
-       // chromeOptions.addArguments("--incognito");
         chromeOptions.setExperimentalOption("excludeSwitches", List.of("enable-logging"));
         ChromeDriverService service = new ChromeDriverService.Builder().build();
         driver = new ChromeDriver(service, chromeOptions);

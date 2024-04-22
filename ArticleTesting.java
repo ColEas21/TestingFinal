@@ -20,11 +20,6 @@ public class ArticleTesting {
     WebDriver driver;
     @BeforeClass
     public void initializeDriver() {
-        //ChromeOptions chromeOptions = new ChromeOptions();
-        //chromeOptions.addArguments("--incognito");
-        //chromeOptions.setExperimentalOption("excludeSwitches", List.of("enable-logging"));
-        //WebDriverManager.chromedriver().setup();
-        //return new ChromeDriver(chromeOptions);
         driver = ESPNLogin.loginAndGetDriver();
         driver.get("https://www.espn.com/wnba/story/_/id/39945196/wnba-mock-draft-2024-clark-iowa-brink-reese-cardoso-edwards");
     }
@@ -55,6 +50,8 @@ public class ArticleTesting {
             //return false;
         }
     }
+
+    // checks if the author works for espn
     @Test
     public void checkAuthor() {
         String xpath = "//div[@class='article-body']//div[@class='author has-bio']";
@@ -69,6 +66,8 @@ public class ArticleTesting {
            // return false;
         }
     }
+
+    // checks how many reactions are on a article
     @Test
     public void checkReactionsCount() {
         String className = "reactions-count-button";

@@ -14,10 +14,7 @@ public class LiveMLBTester {
 
     @BeforeClass
     public void initializeDriver() {
-        //ChromeOptions chromeOptions = new ChromeOptions();
-        //chromeOptions.addArguments("--incognito");
-        //chromeOptions.setExperimentalOption("excludeSwitches", List.of("enable-logging"));
-        //driver = new ChromeDriver(chromeOptions);
+
         driver = ESPNLogin.loginAndGetDriver();
 
     }
