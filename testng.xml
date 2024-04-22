@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/colli/IdeaProjects/ESPNTester">
+        <classes>
+            <class name="org.example.ESPNLogin">
+                <methods>
+                    <include name="mainFunction"/>
+                </methods>
+            </class>
+            <class name="org.example.PlayoffTester">
+                <methods>
+                    <include name="GetFantasyDropdown"/>
+                    <include name="GetNBAChallenge"/>
+                    <include name="clickBracket"/>
+                    <include name="clickGroups"/>
+                </methods>
+            </class>
+            <class name="org.example.TeamInteraction">
+                <methods>
+                    <include name="clickOnDropdown"/>
+                    <include name="clickOnNcaaM"/>
+                    <include name="clickOnTeams"/>
+                    <include name="clickOnFGCU"/>
+                    <include name="followteam"/>
+                </methods>
+            </class>
+            <class name="org.example.ArticleTesting">
+                <methods>
+                    <include name="validateArticle"/>
+                    <include name="checkHeader"/>
+                    <include name="checkAuthor"/>
+                    <include name="checkReactionsCount"/>
+                    <include name="checkArticleLength"/>
+                </methods>
+            </class>
+            <class name="org.example.SearchTest">
+                <methods>
+                    <include name="clickOnSearch"/>
+                    <include name="SearchSport"/>
+                    <include name="naviToTeamsTabs"/>
+                    <include name="searchPlayer"/>
+                    <include name="SearchNonSense"/>
+                </methods>
+            </class>
+            <class name="org.example.LiveMLBTester">
+                <methods>
+                    <include name="main"/>
+                    <include name="navigateToScores"/>
+                    <include name="getDayOfGames"/>
+                </methods>
+            </class>
+            <class name="org.example.MainPageTest">
+                <methods>
+                    <include name="verfiyNavi"/>
+                    <include name="getDropdownCata"/>
+                    <include name="getHeadline"/>
+                    <include name="ClickHeadline"/>
+                </methods>
+            </class>
+
+
+
+            <class name="org.example.WatchEspn">
+                <methods>
+                    <include name="clickOnWatchDropdown"/>
+                    <include name="goToWatchHome"/>
+                    <include name="getVideoTitle"/>
+                    <include name="clickOnVideo"/>
+                    <include name="clickOnThreeDots"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
